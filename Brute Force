@@ -1,0 +1,18 @@
+This playbooks is on brute force authentication attempts. The attacks can be against internal or Internet facing systems.
+Detection
+SIEM alerts on number of failed authentication attempts.
+Related alerts from IPS and other security devices.
+Verification
+Check if the logon was successful or not.
+Confirm if the targeted account(s) exist or not.
+Check the attack source IP:
+confirm it is an internal host or external
+confirm owner / user of the source IP (if possible)
+Communication
+If the attack is successful, escalate to security / risk management team and relevant IT support teams and discuss mitigation strategy. Inform the relevant account owner(s) on the password compromise and necessary reset.
+If the attacker is an internal IP, check with the owner / administrator to understand any recent action may have caused this. (e.g. downloaded software from Internet)
+For failed attacks report / escalate according to a pre-agreed threshold (e.g. based on number of accounts affected, number of attacks, etc).
+Action
+If the attack is successful, reset passwords of all compromised accounts immediately. Treat target host(s) as compromised and follow playbook #1. Extra care must be taken if the concerned account is an administrator account, where an in-depth investigation will be needed on the impact and containment actions required.
+If the attacker IP is internal, assume it is compromised and execute playbook #1.
+If the attacker is on the Internet, block the source IP on the network perimeter. You may consider to report it to the IP / AS owner on their abuse contact.
